@@ -1,0 +1,11 @@
+# pixi environments
+.pixi
+*.egg-info
+PandaData/.idlpy_manifest
+pixi.lock
+*.pyc
+*.pyo
+*.pyd
+*/__pycache__/
+
+.vscode/

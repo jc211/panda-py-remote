@@ -1,0 +1,34 @@
+[project]
+name = "remote_panda_py"
+requires-python = ">=3.11"
+version = "1.0.0"
+authors = [
+    { name = "Jad Abou-Chakra", email = "jad.chakra@hdr.qut.edu.au" },
+]
+keywords = ["python", "real-time", "control", "robot", "franka", "emika", "remote"]
+classifiers = [
+        "Intended Audience :: Science/Research",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Topic :: Scientific/Engineering",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+dependencies = [
+"trio>=0.24, <0.25",
+"tractor @ git+https://pikers.dev/jc211/tractor.git@aba46b723b",
+"wsproto @ git+https://github.com/python-hyper/wsproto.git",
+"trio-websocket @ git+https://github.com/jc211/trio-websocket.git",
+"numpy", "trio-util>=0.7.0,<0.8", "httpx>=0.27.2,<0.28", "panda-python>=0.8.1,<0.9", "tyro>=0.8.11,<0.9", "netifaces>=0.11.0,<0.12"]
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+remote_panda_py = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+server = "python scripts/server.py"
