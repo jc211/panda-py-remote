@@ -1,5 +1,5 @@
 [project]
-name = "remote_panda_py"
+name = "panda_py_remote"
 requires-python = ">=3.11"
 version = "1.0.0"
 authors = [
@@ -28,7 +28,7 @@ channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [tool.pixi.pypi-dependencies]
-remote_panda_py = { path = ".", editable = true }
+panda_py_remote = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 server = "python scripts/server.py"
